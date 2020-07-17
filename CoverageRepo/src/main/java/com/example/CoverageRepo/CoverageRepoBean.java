@@ -3,8 +3,8 @@ package com.example.CoverageRepo;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class CoverageRepoBean {
@@ -15,19 +15,31 @@ public class CoverageRepoBean {
 	private int year;
 	private BigDecimal interest;
 	
+	@Transient
+	private int port;
+	
 	public CoverageRepoBean() {
 		super();
 		this.id = id;
 		this.premium = premium;
 		this.year = year;
 		this.interest = interest;
+		this.port = port;
 	}
-	public CoverageRepoBean(int id, long premium, int year, BigDecimal interest) {
+	
+	public CoverageRepoBean(int id, long premium, int year, BigDecimal interest, int port) {
 		super();
 		this.id = id;
 		this.premium = premium;
 		this.year = year;
 		this.interest = interest;
+		this.port = port;
+	}
+	public int getPort() {
+		return port;
+	}
+	public void setPort(int port) {
+		this.port = port;
 	}
 	public int getId() {
 		return id;

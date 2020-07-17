@@ -3,6 +3,7 @@ package com.example.CoverageCalculator;
 import java.math.BigDecimal;
 
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 public class CoverageCalculatorBean {
 	
@@ -11,6 +12,11 @@ public class CoverageCalculatorBean {
 	private int year;
 	private BigDecimal interest;
 	private BigDecimal coverage;
+	
+	@Transient
+	private int port;
+	
+
 	public CoverageCalculatorBean() {
 		super();
 		this.id = id;
@@ -18,15 +24,23 @@ public class CoverageCalculatorBean {
 		this.year = year;
 		this.interest = interest;
 		this.coverage = coverage;
+		this.port = port;
 	}
 	
-	public CoverageCalculatorBean(int id, long premium, int year, BigDecimal interest, BigDecimal coverage) {
+	public CoverageCalculatorBean(int id, long premium, int year, BigDecimal interest, BigDecimal coverage, int port) {
 		super();
 		this.id = id;
 		this.premium = premium;
 		this.year = year;
 		this.interest = interest;
 		this.coverage = coverage;
+		this.port = port;
+	}
+	public int getPort() {
+		return port;
+	}
+	public void setPort(int port) {
+		this.port = port;
 	}
 	public int getId() {
 		return id;

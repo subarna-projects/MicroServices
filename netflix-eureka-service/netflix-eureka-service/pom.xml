@@ -9,10 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>CoverageRepo</artifactId>
+	<artifactId>netflix-eureka-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CoverageRepo</name>
-	<packaging>jar</packaging>
+	<name>netflix-eureka-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -27,36 +26,22 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-<dependency>
-<groupId>org.springframework.cloud</groupId>
-<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-<exclusions>
-<exclusion>
-<groupId>com.fasterxml.jackson.dataformat</groupId>
-<artifactId>jackson-dataformat-xml</artifactId>
-</exclusion>
-</exclusions>
-</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -84,7 +69,6 @@
 	</dependencyManagement>
 
 	<build>
-	<finalName>coverage-repo-pcf-demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -26,14 +26,14 @@ public class CoverageController {
 		ResponseEntity <CoverageCalculatorBean> responseentity= new RestTemplate().
 				getForEntity("http://localhost:8888/retrunInterestService/{premium}/for/{year}", CoverageCalculatorBean.class,uriVariables);
 		CoverageCalculatorBean response=responseentity.getBody();
-		return new CoverageCalculatorBean(response.getId(),premium,year,response.getInterest(),response.getInterest().multiply(BigDecimal.valueOf(premium)));
+		return new CoverageCalculatorBean(response.getId(),premium,year,response.getInterest(),response.getInterest().multiply(BigDecimal.valueOf(premium)),response.getPort());
 	}
 	@GetMapping("coverageCalculationFeign/{premium}/for/{year}")
 	public CoverageCalculatorBean coverageCalculatorFeign(@PathVariable long premium, @PathVariable int year)
 	{
 		
 		CoverageCalculatorBean response= proxy.coverageCalculatorFeign(premium, year);
-		return new CoverageCalculatorBean(response.getId(),premium,year,response.getInterest(),response.getInterest().multiply(BigDecimal.valueOf(premium)));
+		return new CoverageCalculatorBean(response.getId(),premium,year,response.getInterest(),response.getInterest().multiply(BigDecimal.valueOf(premium)),response.getPort());
 	}
 	
 
