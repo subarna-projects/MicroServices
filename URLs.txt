@@ -1,0 +1,4 @@
+Feign-http://localhost:8898/coverageCalculationFeign/1000/for/5
+
+https://github.com/in28minutes/spring-microservices/tree/master
+zuul-http://localhost:8878/coverage-calculator-service/coverageCalculationFeign/1000/for/5
